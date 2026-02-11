@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Modules\Kshititech\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route; // ✅ ADD THIS
+
+class KshititechServiceProvider extends ServiceProvider
+{
+    public function boot(): void
+    {
+        // Load Views (kshititech::index)
+        $this->loadViewsFrom(__DIR__ . "/../Views", "kshititech");
+
+        $this->mapModuleRoutes();
+    }
+
+    public function register(): void
+    {
+        //
+    }
+
+    protected function mapModuleRoutes(): void
+    {
+        $routesPath = app_path('Modules/Kshititech/Routes/web.php');
+
+        Route::domain('kshititech.sarva.one')
+            ->middleware('web')
+            ->group($routesPath);
+
+        Route::domain('kshititechnologies.com')
+            ->middleware('web')
+            ->group($routesPath);
+
+        Route::middleware('web')
+            ->prefix('kshititech')
+            ->group($routesPath);
+    }
+}

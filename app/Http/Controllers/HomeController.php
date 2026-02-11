@@ -8,8 +8,8 @@ class HomeController extends Controller
     public function index()
     {
         $seo = [
-            "title" => env("APP_NAME"),
-            "description" => "This is the home page of our website.",
+            "title" => config("app.name") . " - " . config("app.tagline"),
+            "description" => config('app.description'),
             "keywords" => "home, page, website"
         ];
 
