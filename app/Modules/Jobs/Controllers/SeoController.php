@@ -4,7 +4,6 @@ namespace App\Modules\Jobs\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Modules\Master\Models\MasterLocationModel;
-use App\Modules\Jobs\Models\JobsModel;
 
 class SeoController extends Controller
 {
@@ -32,6 +31,7 @@ class SeoController extends Controller
         $xml .= $this->buildUrlEntry(url('/'), now(), "daily", "1.0");
 
         // ✅ 2. Core Static Pages
+        /*
         $staticPages = [
             [ "url" => "/about-us", "priority" => "0.6", "changefreq" => "yearly" ],
             [ "url" => "/contact-us", "priority" => "0.7", "changefreq" => "yearly" ],
@@ -47,7 +47,7 @@ class SeoController extends Controller
                 $page["priority"]
             );
         }
-
+        */
         // ✅ 3. Main Jobs Listing Pages (High SEO)
         $listingPages = [
             [ "slug" => "properties", "priority" => "0.95" ],
@@ -101,6 +101,7 @@ class SeoController extends Controller
         }
 
         // ✅ 5. Dynamic Jobs Detail Pages (Most Important)
+        /*
         $properties = JobsModel::latest()->limit(500)->get();
 
         foreach ($properties as $jobs) {
@@ -112,7 +113,7 @@ class SeoController extends Controller
                 "0.95"
             );
         }
-
+*/
         $xml .= '</urlset>';
 
         return response($xml, 200)

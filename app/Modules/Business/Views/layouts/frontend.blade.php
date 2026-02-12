@@ -40,32 +40,32 @@
     @endif
 
     {{-- Open Graph Meta Tags --}}
-    <meta property="og:type" content="{{ $seo['og_type'] ?? 'website' }}">
-    <meta property="og:site_name" content="{{ config('app.name') }}">
-    <meta property="og:title" content="{{ $seo['title'] ?? config('app.title', config('app.name')) }}">
-    <meta property="og:description" content="{{ $seo['description'] ?? config('app.description', '') }}">
-    <meta property="og:url" content="{{ $seo['canonical'] ?? url()->current() }}">
-    <meta property="og:locale" content="{{ $seo['locale'] ?? 'en_US' }}">
-    <meta property="og:image" content="{{ $seo['image'] ?? asset('default-og.jpg') }}">
-    <meta property="og:image:secure_url" content="{{ $seo['image'] ?? asset('default-og.jpg') }}">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta business="og:type" content="{{ $seo['og_type'] ?? 'website' }}">
+    <meta business="og:site_name" content="{{ config('app.name') }}">
+    <meta business="og:title" content="{{ $seo['title'] ?? config('app.title', config('app.name')) }}">
+    <meta business="og:description" content="{{ $seo['description'] ?? config('app.description', '') }}">
+    <meta business="og:url" content="{{ $seo['canonical'] ?? url()->current() }}">
+    <meta business="og:locale" content="{{ $seo['locale'] ?? 'en_US' }}">
+    <meta business="og:image" content="{{ $seo['image'] ?? asset('default-og.jpg') }}">
+    <meta business="og:image:secure_url" content="{{ $seo['image'] ?? asset('default-og.jpg') }}">
+    <meta business="og:image:type" content="image/jpeg">
+    <meta business="og:image:width" content="1200">
+    <meta business="og:image:height" content="630">
     @php
         $imageAlt = $seo['image_alt'] ?? $seo['title'] ?? config('app.name');
     @endphp
-    <meta property="og:image:alt" content="{{ $imageAlt }}">
+    <meta business="og:image:alt" content="{{ $imageAlt }}">
 
     @if(isset($seo['article_published_time']) && !empty($seo['article_published_time']))
-        <meta property="article:published_time" content="{{ $seo['article_published_time'] }}">
+        <meta business="article:published_time" content="{{ $seo['article_published_time'] }}">
     @endif
 
     @if(isset($seo['article_modified_time']) && !empty($seo['article_modified_time']))
-        <meta property="article:modified_time" content="{{ $seo['article_modified_time'] }}">
+        <meta business="article:modified_time" content="{{ $seo['article_modified_time'] }}">
     @endif
 
     @if(isset($seo['article_author']) && !empty($seo['article_author']))
-        <meta property="article:author" content="{{ $seo['article_author'] }}">
+        <meta business="article:author" content="{{ $seo['article_author'] }}">
     @endif
 
     {{-- Twitter Card Meta Tags --}}
@@ -130,7 +130,7 @@
 </head>
 
 <body>
-    @include("property::components.navbar")
+    @include("business::components.navbar")
 
     <main class="main-container">
         @yield("content")

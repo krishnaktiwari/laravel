@@ -2,7 +2,7 @@
 
 @section("content")
 
-    <section>
+    <section class="min-vh-100">
 
     </section>
 

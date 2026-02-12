@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-white sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="https://sarva.one/">sarva<span>.</span>one</a>
+        <a class="navbar-brand" href="/">property<span>.</span>sarva<span>.</span>one</a>
 
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
@@ -14,13 +14,13 @@
             <ul class="navbar-nav ms-auto">
 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://property.sarva.one/">Property</a>
+                    <a class="nav-link" href=""></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://jobs.sarva.one/">Jobs</a>
+                    <a class="nav-link" href=""></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://business.sarva.one/">Business</a>
+                    <a class="nav-link" href=""></a>
                 </li>
 
             </ul>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Property\Controllers;
+namespace App\Modules\Business\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Modules\Master\Models\MasterLocationModel;
@@ -48,14 +48,14 @@ class SeoController extends Controller
             );
         }
         */
-        // ✅ 3. Main Property Listing Pages (High SEO)
+        // ✅ 3. Main Business Listing Pages (High SEO)
         $listingPages = [
-            [ "slug" => "properties", "priority" => "0.95" ],
-            [ "slug" => "rent", "priority" => "0.90" ],
-            [ "slug" => "buy", "priority" => "0.90" ],
-            [ "slug" => "sell", "priority" => "0.85" ],
-            [ "slug" => "commercial", "priority" => "0.80" ],
-            [ "slug" => "new-projects", "priority" => "0.85" ],
+            ["slug" => "properties", "priority" => "0.95"],
+            ["slug" => "rent", "priority" => "0.90"],
+            ["slug" => "buy", "priority" => "0.90"],
+            ["slug" => "sell", "priority" => "0.85"],
+            ["slug" => "commercial", "priority" => "0.80"],
+            ["slug" => "new-projects", "priority" => "0.85"],
         ];
 
         foreach ($listingPages as $page) {
@@ -100,15 +100,15 @@ class SeoController extends Controller
             );
         }
 
-        // ✅ 5. Dynamic Property Detail Pages (Most Important)
+        // ✅ 5. Dynamic Business Detail Pages (Most Important)
         /*
-        $properties = PropertyModel::latest()->limit(500)->get();
+        $properties = BusinessModel::latest()->limit(500)->get();
 
-        foreach ($properties as $property) {
+        foreach ($properties as $business) {
 
             $xml .= $this->buildUrlEntry(
-                url("/property/" . $property->slug),
-                $property->updated_at ?? now(),
+                url("/business/" . $business->slug),
+                $business->updated_at ?? now(),
                 "weekly",
                 "0.95"
             );

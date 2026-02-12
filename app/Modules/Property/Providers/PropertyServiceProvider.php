@@ -24,7 +24,7 @@ class PropertyServiceProvider extends ServiceProvider {
         Route::domain('vasudha.properties')
                 ->middleware('web')
                 ->group($routesPath);
-        Route::domain('vasudha.sarva.one')
+        Route::domain('property.sarva.one')
                 ->middleware('web')
                 ->group($routesPath);
     }

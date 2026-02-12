@@ -3,10 +3,12 @@
 return [
     'default' => [
         'name' => 'SARVA ONE',
-        'tagline' => 'All services under one roof',
-        'description' => 'Sarva One provides home services, business solutions and digital services at one place.',
+        'tagline' => 'Your one stop Solution for all your needs',
+        'description' => 'Sarva one is a comprehensive platform that offers a wide range of services to meet all your needs. From home services to business solutions, we have you covered.',
         'assets' => 'sarvaone',
         'google_analytics_id' => 'G-LG9LBLLPLY',
+        'phone' => '+91 74708 22468',
+        'email' => 'info@saeva.one'
     ],
     'domains' => [
         'kshititechnologies.com' => [
@@ -37,7 +39,7 @@ return [
             'assets' => 'kshititech',
             'google_analytics_id' => 'G-8N6LMXDKQV',
         ],
-        
+
         'pradakshina.in' => [
             'name' => 'Pradakshina Consulting',
             'tagline' => 'Strategic Consulting for Sustainable Growth',
