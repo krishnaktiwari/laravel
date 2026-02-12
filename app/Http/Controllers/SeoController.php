@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Modules\Kshititech\Controllers;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Modules\Master\Models\MasterLocationModel;
 
 class SeoController extends Controller {

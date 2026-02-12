@@ -1,8 +1,31 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SeoController;
+
+use App\Modules\Jobs\Controllers\HomeController;
+use App\Modules\Jobs\Controllers\SeoController;
+use App\Modules\Jobs\Controllers\ServicesController;
+use App\Modules\Jobs\Controllers\BlogController;
+
+use App\Modules\Jobs\Controllers\AssetsController;
+
+// routes/web.php
+
+// Logo
+Route::get('/assets/logo', [AssetsController::class, 'logo'])->name('assets.logo');
+
+// Avatar
+Route::get('/assets/avatar/{name}', [AssetsController::class, 'avatar'])->name('assets.avatar');
+
+// Placeholder
+Route::get('/assets/placeholder/{width}/{height?}', [AssetsController::class, 'placeholder'])->name('assets.placeholder');
+
+// Icon
+Route::get('/assets/icon/{type?}', [AssetsController::class, 'icon'])->name('assets.icon');
+
+// Pattern
+Route::get('/assets/pattern', [AssetsController::class, 'pattern'])->name('assets.pattern');
+
 /*
 |--------------------------------------------------------------------------
 | Public Pages Routes
@@ -33,6 +56,17 @@ Route::get('/terms-conditions', [HomeController::class, 'terms_conditions']);
 */
 Route::post('/contact', [HomeController::class, 'contactForm']);          // Contact form submission
 Route::post('/subscribe', [HomeController::class, 'subscribeNewsletter']); // Newsletter subscription
+
+/*
+/*
+|--------------------------------------------------------------------------
+| Blog Routes
+|--------------------------------------------------------------------------
+| Blog listing and single blog post
+|--------------------------------------------------------------------------
+*/
+Route::get('/blog', [BlogController::class, 'index']);   // Blog listing page
+Route::get('/blog/{slug}', [BlogController::class, 'post']); // Single blog post page
 
 /*
 |--------------------------------------------------------------------------
