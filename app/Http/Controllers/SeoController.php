@@ -43,21 +43,7 @@ class SeoController extends Controller {
                 "priority" => "0.8",
                 "changefreq" => "yearly"
             ],
-            [
-                "url" => "/portfolio",
-                "priority" => "0.75",
-                "changefreq" => "monthly"
-            ],
-            [
-                "url" => "/careers",
-                "priority" => "0.6",
-                "changefreq" => "monthly"
-            ],
-            [
-                "url" => "/blog",
-                "priority" => "0.7",
-                "changefreq" => "weekly"
-            ],
+          
             [
                 "url" => "/privacy-policy",
                 "priority" => "0.3",
@@ -79,63 +65,8 @@ class SeoController extends Controller {
             );
         }
 
-        // ✅ 3. Services List (SEO Core Pages)
-        $services = [
-            [
-                "slug" => "web-design-development",
-                "priority" => "0.90"
-            ],
-            [
-                "slug" => "mobile-app-development",
-                "priority" => "0.90"
-            ],
-            [
-                "slug" => "enterprise-software-solutions",
-                "priority" => "0.95"
-            ],
-            [
-                "slug" => "digital-marketing-services",
-                "priority" => "0.88"
-            ],
-            [
-                "slug" => "technology-consulting",
-                "priority" => "0.85"
-            ],
-        ];
-
-        // ✅ Main Service Pages (Without Location)
-        foreach ($services as $service) {
-            $xml .= $this->buildUrlEntry(
-                    url("/services/" . $service["slug"]),
-                    now(),
-                    "weekly",
-                    $service["priority"]
-            );
-        }
-
-        // ✅ 4. Dynamic Location Based Service Pages (Best Local SEO)
-        $locations = MasterLocationModel::all();
-
-        foreach ($locations as $location) {
-
-            // SEO Friendly City Slug
-            $citySlug = strtolower(
-                    str_replace(" ", "-", $location->city . "-" . $location->state)
-            );
-
-            foreach ($services as $service) {
-
-                $xml .= $this->buildUrlEntry(
-                        url("/services/" . $service["slug"] . "/" . $citySlug),
-                        // ✅ Use DB updated_at if exists, else now()
-                        $location->updated_at ?? now(),
-                        // ✅ Google Loves Weekly Updates for Local Pages
-                        "weekly",
-                        // ✅ Best Priority for Location Pages
-                        "0.80"
-                );
-            }
-        }
+     
+     
 
         $xml .= '</urlset>';
 

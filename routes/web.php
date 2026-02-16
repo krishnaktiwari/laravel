@@ -14,8 +14,8 @@ Route::get('/', [HomeController::class, 'index']);                // Home page
 Route::get('/about-us', [HomeController::class, 'about_us']);     // About Us page
 Route::get('/contact-us', [HomeController::class, 'contact_us']); // Contact Us page
 Route::get('/portfolio', [HomeController::class, 'portfolio']);   // Portfolio page
-Route::get('/careers', [HomeController::class, 'careers']);       // Careers page
-
+Route::get('/faq', [HomeController::class, 'faq']);       // Careers page
+Route::get('/careers', [HomeController::class, 'careers']); 
 /*
 |--------------------------------------------------------------------------
 | Legal Pages Routes

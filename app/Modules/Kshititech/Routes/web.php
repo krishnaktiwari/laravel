@@ -34,7 +34,9 @@ Route::get('/assets/pattern', [AssetsController::class, 'pattern'])->name('asset
 |--------------------------------------------------------------------------
 */
 Route::get('/', [HomeController::class, 'index']);                // Home page
+Route::get('/about', [HomeController::class, 'about_us']);     // About Us page
 Route::get('/about-us', [HomeController::class, 'about_us']);     // About Us page
+Route::get('/contact', [HomeController::class, 'contact_us']); // Contact Us page
 Route::get('/contact-us', [HomeController::class, 'contact_us']); // Contact Us page
 Route::get('/portfolio', [HomeController::class, 'portfolio']);   // Portfolio page
 Route::get('/careers', [HomeController::class, 'careers']);       // Careers page
