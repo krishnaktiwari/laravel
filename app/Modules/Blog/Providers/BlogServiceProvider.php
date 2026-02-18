@@ -3,31 +3,44 @@
 namespace App\Modules\Blog\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Route; 
 
 class BlogServiceProvider extends ServiceProvider
 {
-    public function boot(): void
-    {
-        $this->loadViewsFrom(__DIR__ . "/../Views", "Blog");
-
-        $this->mapModuleRoutes();
-    }
-
+    /**
+     * Register services.
+     */
     public function register(): void
     {
         //
     }
 
-    protected function mapModuleRoutes(): void
+    /**
+     * Bootstrap services.
+     */
+    public function boot(): void
     {
-        //$this->loadRoutesFrom(__DIR__ . "/../Routes/web.php");
-        
-        $routesPath = app_path('Modules/Blog/Routes/web.php');
+        $this->registerRoutes();
+        $this->registerViews();
+    }
 
-        Route::domain('blog.sarva.one')
-            ->middleware('web')
-            ->group($routesPath);
-        
+    /**
+     * Load Blog Module Routes
+     */
+    private function registerRoutes(): void
+    {
+        $this->loadRoutesFrom(
+            __DIR__ . '/../Routes/web.php'
+        );
+    }
+
+    /**
+     * Load Blog Module Views
+     */
+    private function registerViews(): void
+    {
+        $this->loadViewsFrom(
+            __DIR__ . '/../Views',
+            'Blog'
+        );
     }
 }

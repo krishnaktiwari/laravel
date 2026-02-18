@@ -1,24 +1,25 @@
-#-------------------------
-# Environment Files
-#-------------------------
+*.log
+.DS_Store
 .env
-#-------------------------
-# Composer
-#-------------------------
-vendor/
-#-------------------------
-# Temporary Files
-#-------------------------
-
-storage/*.key
-storage/app/*
-storage/framework/cache/*
-storage/framework/sessions/*
-storage/framework/testing/*
-storage/framework/views/*
-storage/logs/*
-
-#-------------------------
-# IDE / Development Files
-#-------------------------
-**/nbproject/
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+Homestead.json
+Homestead.yaml
+Thumbs.db
+/nbproject/private/
