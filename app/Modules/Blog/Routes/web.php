@@ -1,21 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Modules\Blog\Controllers\HomeController;
+use App\Modules\Blog\Controllers\BlogController;
 
-use App\Modules\Blog\Controllers\SeoController;
+Route::group([
+    'prefix' => 'blog',
+    'middleware' => ['web'],
+], function () {
 
-/*
-Route::prefix('blog')->group(function () {
-    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/', [BlogController::class, 'index'])
+        ->name('blog.home');
+
+    Route::get('/posts', [BlogController::class, 'posts'])
+        ->name('blog.posts');
+
 });
-*/
-
-Route::get('/', [HomeController::class, 'index']);
-
-/*
-|--------------------------------------------------------------------------
-| SEO Routes
-|--------------------------------------------------------------------------
-*/
-Route::get('/sitemap.xml', [SeoController::class, 'sitemap']);
